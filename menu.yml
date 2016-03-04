@@ -1,0 +1,6 @@
+menu:
+  - id: edit
+    menu:
+      - label: 'Show Completions'
+        id: show_completions
+        command: completer.show_completions

@@ -1,0 +1,5 @@
+- { key: ctrl+space, command: completer.show_completions, if: text_edit_focus }
+- { key: enter, command: completer.clear_selection, if: text_edit_focus && completer.in_completion && completer.popup_visible == false }
+- { key: escape, command: completer.cancel_completion, if: text_edit_focus && completer.in_completion }
+- { key: ctrl+p, command: completer.select_previous_completion, if: on_mac && text_edit_focus && completer.popup_visible }
+- { key: ctrl+n, command: completer.select_next_completion, if: on_mac && text_edit_focus && completer.popup_visible }
