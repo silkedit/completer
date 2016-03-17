@@ -12,7 +12,7 @@ completer.setModelSorting(Completer.ModelSorting.CaseInsensitivelySortedModel);
 completer.setCaseSensitivity(silkedit.CaseSensitivity.CaseInsensitive);
 completer.setWrapAround(true);
 completer.on('activated', (text) => {
-  const textEdit = silkedit.App.activeTextEditView();
+  const textEdit = silkedit.App.activeTextEdit();
   if (textEdit != null) {
     insertCompletion(textEdit, text, false);
   }
@@ -84,7 +84,7 @@ module.exports = {
 
   commands: {
     "show_completions": () => {
-      const textEdit = silkedit.App.activeTextEditView();
+      const textEdit = silkedit.App.activeTextEdit();
 			if (textEdit != null) {
         completer.setWidget(textEdit);
   		  const cursor = textEdit.textCursor();
@@ -97,7 +97,7 @@ module.exports = {
     },
     "clear_selection": () => {
       inCompletion = false;
-      const textEdit = silkedit.App.activeTextEditView();
+      const textEdit = silkedit.App.activeTextEdit();
 			if (textEdit != null) {
 			  const cursor = textEdit.textCursor()
 			  cursor.clearSelection();
@@ -106,7 +106,7 @@ module.exports = {
     },
     "cancel_completion": () => {
       inCompletion = false;
-      const textEdit = silkedit.App.activeTextEditView();
+      const textEdit = silkedit.App.activeTextEdit();
 			if (textEdit != null) {
 			  const cursor = textEdit.textCursor()
 			  cursor.removeSelectedText();
