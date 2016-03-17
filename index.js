@@ -34,8 +34,9 @@ function insertCompletion(textEdit, completion, singleWord) {
   if (singleWord) {
     cursor.setPosition(insertionPosition);
     cursor.movePosition(TextCursor.MoveOperation.EndOfWord, TextCursor.MoveMode.KeepAnchor);
-    inCompletion = true;
   }
+
+  inCompletion = !!singleWord;
 
   textEdit.setTextCursor(cursor);
 }
