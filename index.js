@@ -19,11 +19,11 @@ completer.on('activated', (text) => {
 });
 
 const inCompletionCond = {
-  keyValue: () => inCompletion
+  value: () => inCompletion
 }
 
 const popupVisibleCond = {
-  keyValue: () => completer.popup().isVisible()
+  value: () => completer.popup().isVisible()
 }
 
 function insertCompletion(textEdit, completion, singleWord) {
@@ -73,13 +73,13 @@ function performCompletion(textEdit, completionPrefix) {
 
 module.exports = {
   activate: function() {
-    silkedit.Condition.add("completer.in_completion", inCompletionCond);
-    silkedit.Condition.add("completer.popup_visible", popupVisibleCond);
+    silkedit.ConditionManager.add("completer.in_completion", inCompletionCond);
+    silkedit.ConditionManager.add("completer.popup_visible", popupVisibleCond);
   },
 
   deactivate: function() {
-    silkedit.Condition.remove("completer.in_completion");
-    silkedit.Condition.remove("completer.popup_visible");
+    silkedit.ConditionManager.remove("completer.in_completion");
+    silkedit.ConditionManager.remove("completer.popup_visible");
   },
 
   commands: {
@@ -111,7 +111,7 @@ module.exports = {
 			  const cursor = textEdit.textCursor()
 			  cursor.removeSelectedText();
 			  textEdit.setTextCursor(cursor);
-			  
+
 			  if (completer.popup().isVisible()) {
           completer.popup().hide();
 			  }
