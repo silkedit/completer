@@ -1,3 +1,15 @@
 menu:
   show_completions:
     title: 補完
+
+command:
+  show_completions:
+    description: 補完
+  clear_selection:
+    description: 選択解除
+  cancel_completion:
+    description: 補完キャンセル
+  select_next_completion:
+    description: 次の補完候補を選択
+  select_previous_completion:
+    description: 前の補完候補を選択
