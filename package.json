@@ -1,10 +1,10 @@
 {
   "name": "completer",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Completer SilkEdit package",
   "main": "index.js",
   "repository": "silkedit/completer",
-  "author": "SilkEdit team",
+  "author": "SilkEdit",
   "license": "MIT",
   "dependencies": {
   },
